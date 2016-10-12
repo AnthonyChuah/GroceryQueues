@@ -10,6 +10,8 @@ public:
   // Constructor.
   Shopper(int arrival, int basket, int id);
   // Constructor with arguments.
+  Shopper(const Shopper& copyee_object);
+  // Need copy constructor despite not needing destructor because we want a queue of them!
   friend ostream& operator <<(ostream& outs, const Shopper& the_object);
   // Overloaded out stream operator for Shopper: displays all statistics for the shopper.
   void time_waited(int now, int counter_num);
@@ -21,7 +23,7 @@ public:
   int time_queued;
   // How long this customer waited in the queue.
   int service_time;
-  // How long it takes, in seconds, to serve this customer at a counter.
+  // How long it takes, in seconds, to serve this customer at a counter. Function of basket_size.
   double dissatisfaction;
   // How unhappy this customer is because of the wait: calculated as square of time_queued.
 private:

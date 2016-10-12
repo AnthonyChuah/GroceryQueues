@@ -33,6 +33,17 @@ Shopper::Shopper(int arrival, int basket, int id)
   dissatisfaction = -1;
 }
 
+Shopper::Shopper(const Shopper& copyee_object)
+{
+  shopper_id = copyee_object.shopper_id;
+  counter_number = copyee_object.counter_number;
+  time_queued = copyee_object.time_queued;
+  dissatisfaction = copyee_object.dissatisfaction;
+  arrival_time = copyee_object.arrival_time;
+  basket_size = copyee_object.basket_size;
+  service_time = copyee_object.service_time;
+}
+
 ostream& operator <<(ostream& outs, const Shopper& the_object)
 {
   outs << the_object.shopper_id << ","
