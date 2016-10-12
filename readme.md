@@ -1,4 +1,4 @@
-This program will simulate a grocery store with N checkout counters, serving a randomly-generated population of shoppers who appear at a certain rate.
+This program will simulate a grocery store with checkout counters and shoppers who arrive randomly and have to queue to be served at the counters.
 
 Input parameters:
 
@@ -35,6 +35,7 @@ Every second, do these things sequentially:
 (3) Make progress on the counters' currently-served customers (decrement the waiting time).
 
 Compilation on MinGW: g++ gshopper.cpp simulate.cpp -o simulate.exe
+
 
 Unresolved issue:
 
