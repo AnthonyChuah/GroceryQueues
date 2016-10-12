@@ -27,6 +27,10 @@ Shopper::Shopper(int arrival, int basket, int id)
   basket_size = basket;
   shopper_id = id;
   service_time = 20 + basket_size * 5;
+  // For other values: initialize them at -1.
+  counter_number = -1;
+  time_queued = -1;
+  dissatisfaction = -1;
 }
 
 ostream& operator <<(ostream& outs, const Shopper& the_object)

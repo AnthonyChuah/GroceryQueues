@@ -17,15 +17,15 @@ int main()
   cout << "Welcome to the Store Simulator!\n\n";
   // Ask for user input and collect simulation parameters from there.
   cout << "Please provide the number of counters in your store: ";
-  cin >> ncounters;
+  cin >> ncounters; cin.ignore(80, '\n');
   cout << "Average number of shoppers coming through in an hour: ";
-  cin >> flowrate;
+  cin >> flowrate; cin.ignore(80, '\n');
   cout << "Minimum number of items bought by each shopper: ";
-  cin >> min_purchases;
+  cin >> min_purchases; cin.ignore(80, '\n');
   cout << "Maximum number of items bought by each shopper: ";
-  cin >> max_purchases;
+  cin >> max_purchases; cin.ignore(80, '\n');
   cout << "How many hours would you like to simulate: ";
-  cin >> sim_length;
+  cin >> sim_length; cin.ignore(80, '\n');
   cout << "\n";
 
   int simlength_seconds = sim_length * 3600;
@@ -58,7 +58,6 @@ int main()
 	  Shopper new_shopper(sec, basket_size, id);
 	  shoppers.push_back(new_shopper);
 	  shop_queue.push(new_shopper);
-	  // del new_shopper;
 	}
       // If a counter is available, pop a shopper from the queue to be served.
       for (int i = 0; i < ncounters; i++)
