@@ -48,7 +48,11 @@ int main()
       cout << "Simulation length must be 1 or more.\n";
       exit(1);
     }
-
+  if (flowrate * sim_length > 9000)
+    {
+      cout << "Program not designed to simulate so many shoppers. Please reduce simulation length or shopper arrival rate.\n";
+      exit(1);
+    }
   vector<int> counters; // List of counters' waiting times: if waiting time drops to 0 then it will serve.
   // Use a loop to create a list of shop counters' waiting times (initialized at 0).
   for (int i = 0; i < ncounters; i++)
