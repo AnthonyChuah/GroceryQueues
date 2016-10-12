@@ -36,7 +36,7 @@ int main()
   if (ncounters <= 0)
     {
       cout << "Illegal number of counters. There must be at least 1 counter.\n";
-      exit(1)
+      exit(1);
     }
   if (min_purchases <= 0 || max_purchases < min_purchases)
     {
