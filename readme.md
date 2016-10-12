@@ -39,6 +39,6 @@ Compilation on MinGW: g++ gshopper.cpp simulate.cpp -o simulate.exe
 
 Unresolved issue:
 
-Initially, I attempted to use <vector> to hold my list of shoppers. However, vector::push_back method does not interact safely with my user-defined type. It causes a heap memory error that crashes the program.
+Initially, I attempted to use vector library from STL to hold my list of shoppers. However, vector::push_back method does not interact safely with my user-defined type. It causes a heap memory error that crashes the program.
 
 If anyone knows how to fix my Shopper class for vector::push_back, please do let me know!
