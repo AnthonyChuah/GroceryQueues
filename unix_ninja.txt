@@ -1,0 +1,1 @@
+cat output.txt | grep '^[0-9]' | awk -F , '{total += } END {print total/NR}'
