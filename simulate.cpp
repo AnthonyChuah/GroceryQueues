@@ -57,9 +57,9 @@ int main()
   // Use a loop to create a list of shop counters' waiting times (initialized at 0).
   for (int i = 0; i < ncounters; i++)
     counters.push_back(0);
-  // vector<Shopper> shoppers(0); // A record of all the shoppers who've appeared.
+  vector<Shopper> shoppers; // A record of all the shoppers who've appeared.
   // NOTE: I GAVE UP ON USING VECTOR<SHOPPER> BECAUSE PUSH_BACK CAUSES HEAP ERROR WITH SHOPPER CLASS.
-  Shopper shoppers[10000];
+  // Shopper shoppers[10000];
   queue<Shopper> shop_queue; // Shoppers who actually need to get served.
   // Every time you spawn shoppers, they join the queue.
   // However if there are empty counters available to serve them, they will get instantly popped from queue.
@@ -76,8 +76,8 @@ int main()
 	  // Randomly generate number of items to be bought by shopper.
 	  int basket_size = rand() % (max_purchases - min_purchases + 1) + min_purchases;
 	  Shopper new_shopper(sec, basket_size, id);
-	  // shoppers.push_back(new_shopper);
-	  shoppers[id-1] = new_shopper;
+	  shoppers.push_back(new_shopper);
+	  // shoppers[id-1] = new_shopper;
 	  shop_queue.push(new_shopper);
 	}
       // If a counter is available, pop a shopper from the queue to be served.

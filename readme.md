@@ -37,8 +37,8 @@ Every second, do these things sequentially:
 Compilation on MinGW: g++ gshopper.cpp simulate.cpp -o simulate.exe
 
 
-Unresolved issue:
+Resolved:
 
 Initially, I attempted to use vector library from STL to hold my list of shoppers. However, vector::push_back method does not interact safely with my user-defined type. It causes a heap memory error that crashes the program.
 
-If anyone knows how to fix my Shopper class for vector::push_back, please do let me know!
+After trying again on another day, somehow it worked! Probably a bug in compilation, maybe an old object file lying around? Now implementation with vector of Shoppers instead of static array.
